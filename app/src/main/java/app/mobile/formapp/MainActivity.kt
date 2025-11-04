@@ -93,7 +93,6 @@ fun AppScreen(formViewModel: FormViewModel = viewModel()) {
             ),
         contentAlignment = Alignment.Center
     ) {
-        // 🧾 Card putih di tengah
         Card(
             modifier = Modifier
                 .padding(24.dp)
@@ -103,7 +102,6 @@ fun AppScreen(formViewModel: FormViewModel = viewModel()) {
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
-            // 🧭 Tambahkan scroll agar bisa di-geser saat landscape
             Column(
                 modifier = Modifier
                     .padding(20.dp)

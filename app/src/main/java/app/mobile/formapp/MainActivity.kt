@@ -24,7 +24,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlin.math.sin
 
-// 🧩 Data class untuk state UI
+// Data class untuk state UI
 data class FormUiState(
     val firstName: String = "",
     val lastName: String = "",
@@ -36,7 +36,7 @@ data class FormUiState(
     val isValidEmail: Boolean = true
 )
 
-// 🧠 ViewModel untuk menyimpan state dan validasi
+// ViewModel untuk state dan validasi
 class FormViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(FormUiState())
     val uiState: StateFlow<FormUiState> = _uiState
@@ -73,13 +73,12 @@ class FormViewModel : ViewModel() {
     }
 }
 
-// 🎨 UI utama dengan Material3
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppScreen(formViewModel: FormViewModel = viewModel()) {
     val uiState by formViewModel.uiState.collectAsState()
 
-    // 🌄 Background gradasi
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -109,7 +108,7 @@ fun AppScreen(formViewModel: FormViewModel = viewModel()) {
                 modifier = Modifier
                     .padding(20.dp)
                     .fillMaxWidth()
-                    .verticalScroll(rememberScrollState()), // 💡 penting!
+                    .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
@@ -225,7 +224,6 @@ fun AppScreen(formViewModel: FormViewModel = viewModel()) {
     }
 }
 
-// 🏠 MainActivity — versi final
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
